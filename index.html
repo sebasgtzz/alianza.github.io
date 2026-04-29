@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Alianza Libre por Guerrero — Por Guerrero, somos más</title>
+<meta name="description" content="Asociación civil guerrerense que articula organizaciones, colectivos y juventudes para transformar el estado desde el territorio."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --t:#009DB5;--td:#00768A;--tdd:#004F5C;--tl:#E0F4F7;--tll:#F2FAFB;
+  --am:#D9921A;--aml:#FBF1DD;
+  --co:#C25028;--col:#F7E8E1;
+  --pu:#5E3994;--pul:#EFE9F8;
+  --gr:#3E7B22;--grl:#E7F1DC;
+  --dk:#0B0E10;--dk2:#13171A;--dk3:#1C2125;--dk4:#272D32;
+  --sf:#6F7479;--ln:#E8E5DE;--pa:#F5F2EB;--cr:#FAF7F0;--wh:#fff;
+  --r:14px;--rs:10px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Outfit',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-weight:400;
+  color:var(--dk);background:var(--cr);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  font-feature-settings:"ss01","cv11";
+}
+h1,h2,h3,h4,.serif{font-family:'Fraunces',Georgia,serif;font-weight:400;letter-spacing:-.02em;}
+em{font-style:italic;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+
+/* Subtle grain overlay */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.06;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+
+/* ───── NAV ───── */
+nav{
+  background:rgba(11,14,16,.78);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);
+  padding:0 44px;display:flex;align-items:center;justify-content:space-between;height:66px;
+  position:sticky;top:0;z-index:99;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nl{display:flex;align-items:center;gap:13px;}
+.nlogo{width:42px;height:42px;border-radius:11px;overflow:hidden;flex-shrink:0;
+  background:var(--t);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 8px 22px -10px rgba(0,157,181,.5);}
+.nlogo img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.nt{display:flex;flex-direction:column;line-height:1.1;}
+.nt span{font-size:10.5px;color:rgba(255,255,255,.42);letter-spacing:1.5px;text-transform:uppercase;}
+.nt strong{font-size:15px;color:#fff;font-weight:500;font-family:'Fraunces',serif;letter-spacing:-.01em;margin-top:1px;}
+.nt strong em{color:var(--t);font-style:italic;}
+nav ul{list-style:none;display:flex;gap:28px;}
+nav ul a{color:rgba(255,255,255,.62);font-size:13.5px;cursor:pointer;transition:color .25s var(--ease);position:relative;}
+nav ul a:hover{color:#fff;}
+nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--t);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);}
+nav ul a:hover::after{transform:scaleX(1);}
+.ncta{background:var(--t);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-size:13.5px;font-weight:500;
+  transition:transform .2s var(--ease), background .2s var(--ease), box-shadow .25s var(--ease);
+  box-shadow:0 6px 20px -8px rgba(0,157,181,.55);}
+.ncta:hover{background:var(--td);transform:translateY(-1px);box-shadow:0 10px 26px -8px rgba(0,157,181,.7);}
+.ncta:active{transform:translateY(0) scale(.98);}
+
+/* ───── HERO ───── */
+.hero{
+  background:var(--dk);min-height:680px;display:grid;grid-template-columns:1.05fr 1fr;
+  position:relative;overflow:hidden;border-bottom:1px solid #1d2226;
+}
+.hbg{position:absolute;inset:0;opacity:.05;pointer-events:none;}
+.hjag{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:680px;height:680px;opacity:.04;pointer-events:none;
+  background-image:url("Imagenes%20Alianza/WhatsApp%20Image%202026-04-28%20at%205.45.25%20PM.jpeg");background-size:contain;background-repeat:no-repeat;background-position:center;
+  filter:grayscale(1) brightness(2);}
+.hl{padding:84px 56px 64px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:3;}
+.hew{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
+.htag{
+  background:rgba(0,157,181,.13);border:1px solid rgba(0,157,181,.32);color:var(--t);
+  font-size:10.5px;font-weight:600;padding:6px 14px;border-radius:50px;letter-spacing:1.4px;text-transform:uppercase;
+}
+.hdiv{flex:1;height:1px;background:linear-gradient(to right,rgba(255,255,255,.18),transparent);max-width:80px;}
+.hsub2{font-size:11.5px;color:rgba(255,255,255,.32);letter-spacing:.4px;}
+.hero h1{
+  font-size:clamp(38px,4.5vw,58px);color:#fff;line-height:1.04;margin-bottom:22px;
+  letter-spacing:-.035em;text-wrap:balance;
+}
+.hero h1 em{color:var(--t);font-style:italic;font-weight:500;}
+.lema{
+  font-family:'Fraunces',serif;font-size:21px;font-style:italic;font-weight:400;
+  color:var(--am);margin-bottom:22px;display:inline-flex;align-items:center;gap:14px;
+}
+.lema::before{content:"";width:36px;height:1px;background:var(--am);}
+.hsub{font-size:15.5px;color:rgba(255,255,255,.6);line-height:1.65;max-width:480px;margin-bottom:36px;font-weight:300;}
+.hbtns{display:flex;gap:14px;margin-bottom:52px;flex-wrap:wrap;}
+.bp{
+  background:var(--t);color:#fff;border:none;padding:14px 28px;border-radius:9px;
+  font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:9px;
+  transition:all .25s var(--ease);
+  box-shadow:0 8px 24px -10px rgba(0,157,181,.55);
+}
+.bp:hover{background:var(--td);transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(0,157,181,.7);}
+.bp:active{transform:translateY(0) scale(.98);}
+.bp svg{transition:transform .3s var(--ease);}
+.bp:hover svg{transform:translateX(3px);}
+.bs{
+  background:transparent;color:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.18);
+  padding:14px 26px;border-radius:9px;font-size:14px;transition:all .25s var(--ease);
+}
+.bs:hover{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.04);}
+
+.hbadges{display:flex;align-items:center;gap:24px;}
+.hbi{text-align:left;}
+.hbn{font-family:'Fraunces',serif;font-size:32px;color:#fff;line-height:1;letter-spacing:-.04em;}
+.hbn em{color:var(--t);font-style:italic;}
+.hbl{font-size:11.5px;color:rgba(255,255,255,.38);margin-top:6px;letter-spacing:.3px;}
+.hbsep{width:1px;height:34px;background:rgba(255,255,255,.1);}
+
+/* Hero photo column — collage */
+.hr{position:relative;background:var(--dk2);}
+.hri{
+  position:absolute;inset:0;display:grid;
+  grid-template-columns:1.1fr .9fr;grid-template-rows:1.4fr 1fr;
+  gap:8px;padding:8px 8px 8px 0;
+}
+.hpi{position:relative;overflow:hidden;border-radius:14px;background:#0f1316;}
+.hpi:nth-child(1){grid-column:1/2;grid-row:1/3;}
+.hpi:nth-child(2){grid-column:2/3;grid-row:1/2;}
+.hpi:nth-child(3){grid-column:2/3;grid-row:2/3;}
+.hpi img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease), filter .6s var(--ease);}
+.hpi:hover img{transform:scale(1.04);}
+.hpi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,14,16,.55));pointer-events:none;}
+.hcap{position:absolute;left:14px;bottom:12px;font-size:11px;color:rgba(255,255,255,.85);letter-spacing:.3px;z-index:2;font-weight:500;}
+.hcap span{display:block;font-size:10px;color:rgba(255,255,255,.55);font-weight:400;margin-top:2px;}
+
+.hob{
+  position:absolute;bottom:24px;left:24px;background:rgba(8,10,12,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:13px 18px;z-index:5;
+  display:flex;align-items:center;gap:12px;
+}
+.hob-dot{width:8px;height:8px;border-radius:50%;background:#5dd66d;box-shadow:0 0 0 4px rgba(93,214,109,.18);}
+.hob-text p{font-size:13px;color:#fff;font-weight:500;}
+.hob-text span{font-size:11px;color:rgba(255,255,255,.42);}
+
+/* ───── MARQUEE ───── */
+.mq{background:var(--t);padding:14px 0;overflow:hidden;white-space:nowrap;border-top:1px solid #007a8c;border-bottom:1px solid #007a8c;}
+.mqi{display:inline-flex;animation:mq 38s linear infinite;}
+.mqitem{display:inline-flex;align-items:center;gap:10px;padding:0 22px;font-size:11.5px;color:rgba(255,255,255,.92);font-weight:600;letter-spacing:1.6px;text-transform:uppercase;}
+.mqd{width:5px;height:5px;background:rgba(255,255,255,.45);transform:rotate(45deg);}
+@keyframes mq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ───── SECTION BASE ───── */
+section{padding:96px 56px;position:relative;}
+.container{max-width:1280px;margin:0 auto;}
+.sl{font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;display:inline-flex;align-items:center;gap:10px;}
+.sl::before{content:"";width:24px;height:1px;background:currentColor;opacity:.5;}
+.sh{font-size:clamp(30px,3vw,42px);line-height:1.08;margin-bottom:14px;letter-spacing:-.03em;text-wrap:balance;max-width:780px;}
+.ss{font-size:15.5px;line-height:1.65;max-width:580px;margin-bottom:52px;font-weight:300;}
+
+/* ───── INSTITUCIONAL ───── */
+.inst{background:var(--cr);}
+.il{display:grid;grid-template-columns:1.15fr 1fr;gap:72px;align-items:start;}
+.ib p{font-size:15.5px;color:#3a3d41;line-height:1.78;margin-bottom:16px;font-weight:300;}
+.ib p strong{font-weight:500;color:var(--dk);}
+.iq{background:var(--dk);border-radius:18px;padding:30px 34px;margin-top:30px;position:relative;overflow:hidden;border:1px solid #1c2226;}
+.iq::before{content:"\201C";position:absolute;top:-30px;right:18px;font-family:'Fraunces',serif;font-size:140px;color:rgba(0,157,181,.2);line-height:1;}
+.iq p{font-family:'Fraunces',serif;font-size:17px;font-style:italic;color:rgba(255,255,255,.86);line-height:1.6;margin-bottom:14px;font-weight:400;position:relative;z-index:2;}
+.iq footer{font-size:10.5px;color:var(--t);letter-spacing:1.4px;text-transform:uppercase;font-family:'Outfit',sans-serif;font-weight:600;}
+.pg{display:flex;flex-direction:column;gap:14px;}
+.pc{
+  background:var(--wh);border:1px solid var(--ln);border-radius:14px;padding:20px 22px;
+  display:flex;align-items:flex-start;gap:14px;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+}
+.pc:hover{transform:translateY(-2px);box-shadow:0 14px 32px -16px rgba(11,14,16,.18);border-color:#dcd6ca;}
+.pi{width:38px;height:38px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.pc h4{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:600;color:var(--dk);margin-bottom:5px;letter-spacing:-.01em;}
+.pc p{font-size:13px;color:#666;line-height:1.55;margin:0;font-weight:300;}
+
+/* ───── ESTRUCTURA ───── */
+.est{background:var(--dk);color:#fff;}
+.est .container{position:relative;}
+.est .sh{color:#fff;}
+.est .ss{color:rgba(255,255,255,.5);}
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ec{
+  background:linear-gradient(180deg,var(--dk2),var(--dk3));
+  border:1px solid #2a3036;border-radius:16px;padding:26px 24px 24px;
+  position:relative;overflow:hidden;
+  transition:transform .3s var(--ease), border-color .3s var(--ease);
+}
+.ec:hover{transform:translateY(-3px);border-color:#3a414a;}
+.ea{position:absolute;top:0;left:0;right:0;height:2px;}
+.en{font-family:'Fraunces',serif;font-size:64px;font-weight:400;color:rgba(255,255,255,.045);position:absolute;top:6px;right:18px;line-height:1;font-style:italic;}
+.ei{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.ec h3{font-family:'Outfit',sans-serif;font-size:14.5px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.35;letter-spacing:-.01em;}
+.ec p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;font-weight:300;}
+
+/* ───── EJES ───── */
+.ejes{background:var(--cr);}
+.ejg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.ejc{
+  border-radius:18px;padding:30px 26px 26px;border:1px solid transparent;
+  position:relative;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s var(--ease);
+}
+.ejc:hover{transform:translateY(-4px);}
+.ejc::after{content:"";position:absolute;top:0;right:0;width:120px;height:120px;border-radius:50%;opacity:.08;transform:translate(40px,-50px);}
+.ejt{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.ejnl{font-size:10.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;font-family:'Outfit',sans-serif;}
+.ejci{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ejc h3{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em;}
+.ejc p{font-size:13.5px;line-height:1.6;margin:0;flex:1;font-weight:400;}
+.ejf{margin-top:18px;padding-top:14px;display:flex;}
+.ejb{font-size:10.5px;font-weight:600;padding:4px 11px;border-radius:50px;letter-spacing:.3px;}
+
+/* ───── GALLERY ───── */
+.gal{background:var(--pa);}
+.glt{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;margin-bottom:10px;height:440px;}
+.gm{border-radius:18px 0 0 18px;overflow:hidden;position:relative;background:var(--dk3);}
+.gm img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease);}
+.gm:hover img{transform:scale(1.05);}
+.gm::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(11,14,16,.55));}
+.gmc{position:absolute;left:24px;bottom:22px;color:#fff;z-index:2;}
+.gmc span{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t);margin-bottom:8px;}
+.gmc h4{font-family:'Fraunces',serif;font-size:24px;font-weight:400;line-height:1.15;letter-spacing:-.02em;max-width:380px;}
+.gc{display:grid;grid-template-rows:1fr 1fr;gap:10px;}
+.gci{position:relative;overflow:hidden;background:var(--dk3);}
+.gci img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.gci:hover img{transform:scale(1.05);}
+.gci:nth-child(1){border-radius:0 18px 0 0;}
+.gci:nth-child(2){border-radius:0 0 18px 0;}
+.gr4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gri{height:200px;position:relative;overflow:hidden;background:var(--dk3);border-radius:14px;}
+.gri img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.gri:hover img{transform:scale(1.06);}
+.gri::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.45));pointer-events:none;}
+.glab{position:absolute;left:14px;bottom:12px;font-size:11px;color:#fff;font-weight:500;z-index:2;letter-spacing:.3px;}
+.gcap{display:flex;align-items:center;gap:12px;margin-top:24px;padding:14px 22px;background:var(--wh);border-radius:50px;border:1px solid var(--ln);width:fit-content;}
+.gcap-dot{width:8px;height:8px;border-radius:50%;background:var(--t);box-shadow:0 0 0 4px rgba(0,157,181,.15);}
+.gcap p{font-size:13px;color:#5a5d61;margin:0;font-weight:400;}
+
+/* ───── ALIADAS ───── */
+.ali{background:var(--dk);color:#fff;}
+.ali .sh{color:#fff;}
+.alil{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:start;}
+.alileft p{font-size:15.5px;color:rgba(255,255,255,.62);line-height:1.72;margin-bottom:20px;font-weight:300;}
+.alic{display:flex;flex-direction:column;gap:12px;margin-top:30px;}
+.alid{display:flex;align-items:flex-start;gap:14px;}
+.alidd{width:22px;height:22px;border-radius:50%;background:rgba(0,157,181,.18);border:1px solid rgba(0,157,181,.45);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.alid p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.55;margin:0;font-weight:300;}
+.aligw{background:var(--dk2);border:1px solid #272d32;border-radius:18px;padding:26px;}
+.aligt{font-size:11px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:1.3px;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.aligt::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.08);}
+.alicps{display:flex;flex-wrap:wrap;gap:10px;}
+.alicp{background:var(--dk3);border:1px solid #353c42;border-radius:9px;padding:10px 16px;font-size:13px;color:#cfd1d4;transition:all .25s var(--ease);}
+.alicp:hover{border-color:var(--t);color:#fff;}
+.alica{background:transparent;border:1px dashed #3a4148;border-radius:9px;padding:10px 16px;font-size:13px;color:#7a8087;cursor:pointer;transition:all .25s var(--ease);}
+.alica:hover{border-color:var(--t);color:var(--t);}
+
+/* ───── IMPACTO (banner) ───── */
+.imp{background:var(--t);padding:96px 56px;color:#fff;position:relative;overflow:hidden;}
+.imp::before{content:"";position:absolute;inset:0;background:radial-gradient(800px circle at 80% 50%,rgba(255,255,255,.1),transparent 50%);pointer-events:none;}
+.impin{display:grid;grid-template-columns:1.1fr 1fr;gap:68px;align-items:center;position:relative;z-index:2;}
+.imph{font-size:clamp(28px,2.6vw,38px);color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-.03em;}
+.impp{font-size:15.5px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:30px;font-weight:300;}
+.bwh{
+  background:#fff;color:var(--td);border:none;padding:14px 30px;border-radius:9px;font-size:14px;font-weight:600;
+  display:inline-flex;align-items:center;gap:9px;transition:all .25s var(--ease);
+  box-shadow:0 12px 28px -10px rgba(0,0,0,.25);
+}
+.bwh:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(0,0,0,.35);}
+.bwh svg{transition:transform .3s var(--ease);}
+.bwh:hover svg{transform:translateX(3px);}
+.impst{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.impsc{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:24px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.impsn{font-family:'Fraunces',serif;font-size:48px;font-weight:400;color:#fff;line-height:1;letter-spacing:-.04em;}
+.impsl{font-size:13px;color:rgba(255,255,255,.7);margin-top:9px;line-height:1.45;font-weight:300;}
+
+/* ───── FUNDADORES ───── */
+.fnd{background:var(--cr);}
+.fndg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;}
+.fndc{
+  background:var(--wh);border-radius:18px;padding:30px 22px;text-align:center;border:1px solid var(--ln);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.fndc:hover{transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(11,14,16,.18);}
+.fndav{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:#fff;font-family:'Fraunces',serif;letter-spacing:-.02em;}
+.fndc h4{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:600;color:var(--dk);margin-bottom:5px;letter-spacing:-.01em;}
+.fndc p{font-size:13px;color:#777;margin-bottom:12px;font-weight:300;}
+.fndt{font-size:10.5px;font-weight:600;padding:5px 13px;border-radius:50px;display:inline-block;letter-spacing:.4px;}
+
+/* ───── ÚNETE ───── */
+.une{background:var(--dk);color:#fff;}
+.une .sh{color:#fff;}
+.unel{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.unep{font-size:15.5px;color:rgba(255,255,255,.6);line-height:1.72;margin-bottom:30px;font-weight:300;}
+.bens{display:flex;flex-direction:column;gap:14px;}
+.ben{display:flex;align-items:flex-start;gap:13px;}
+.beni{width:22px;height:22px;border-radius:50%;background:rgba(0,157,181,.18);border:1px solid rgba(0,157,181,.45);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;}
+.ben p{font-size:14px;color:rgba(255,255,255,.66);line-height:1.55;margin:0;font-weight:300;}
+.fc{background:var(--dk2);border:1px solid #272d32;border-radius:18px;padding:34px;}
+.fc h3{font-family:'Outfit',sans-serif;font-size:17px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:-.01em;}
+.fcd{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:24px;font-weight:300;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.fc input,.fc select,.fc textarea{
+  width:100%;padding:13px 15px;border:1px solid #2e3338;border-radius:9px;font-size:14px;
+  background:#0f1316;color:#dde1e4;font-family:inherit;transition:border-color .2s var(--ease),background .2s var(--ease);
+}
+.fc input:focus,.fc select:focus,.fc textarea:focus{outline:none;border-color:var(--t);background:#10171b;}
+.fc input::placeholder,.fc textarea::placeholder{color:#4d5258;}
+.fc textarea{height:96px;resize:none;margin-bottom:14px;}
+.bsub{
+  background:var(--t);color:#fff;border:none;padding:14px;border-radius:9px;font-size:14px;font-weight:600;width:100%;
+  transition:all .25s var(--ease);
+  box-shadow:0 8px 22px -8px rgba(0,157,181,.55);
+}
+.bsub:hover{background:var(--td);transform:translateY(-1px);box-shadow:0 12px 28px -8px rgba(0,157,181,.7);}
+.bsub:active{transform:translateY(0) scale(.98);}
+
+/* ───── FOOTER ───── */
+footer{background:#06090b;padding:64px 56px 30px;color:#888;}
+.ftop{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:42px;margin-bottom:48px;}
+.flr{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.flb{width:38px;height:38px;border-radius:9px;overflow:hidden;flex-shrink:0;background:var(--t);}
+.flb img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.fbn{font-family:'Fraunces',serif;font-size:16px;color:#fff;font-weight:500;letter-spacing:-.01em;}
+.fbn em{color:var(--t);font-style:italic;}
+.flem{font-size:13px;color:var(--am);font-style:italic;font-family:'Fraunces',serif;margin-bottom:10px;}
+footer small{font-size:13px;color:#4a4f55;line-height:1.65;display:block;max-width:280px;font-weight:300;}
+.fc2 h5{font-size:10.5px;font-weight:700;color:#5a5f65;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;font-family:'Outfit',sans-serif;}
+.fc2 ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fc2 ul li{font-size:13.5px;color:#7e8389;cursor:pointer;transition:color .2s var(--ease);font-weight:300;}
+.fc2 ul li:hover{color:var(--t);}
+.fbot{border-top:1px solid #14181a;padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.fbot p{font-size:12px;color:#3a3e43;font-weight:300;}
+.sr{display:flex;gap:8px;}
+.sb{
+  background:#0d1113;border:1px solid #1c2024;color:#7a7f85;width:36px;height:36px;border-radius:9px;font-size:11.5px;font-weight:600;
+  display:inline-flex;align-items:center;justify-content:center;transition:all .2s var(--ease);
+}
+.sb:hover{background:#15191c;color:#cdd1d5;border-color:#2a2e33;}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}
+  .hl{padding:60px 28px 44px;}
+  .hr{height:340px;}
+  .hero,.il,.alil,.impin,.unel,.ftop{grid-template-columns:1fr;}
+  section{padding:64px 28px;}
+  .imp{padding:64px 28px;}
+  footer{padding:50px 28px 26px;}
+  .eg,.ejg{grid-template-columns:1fr 1fr;}
+  nav ul,.ncta{display:none;}
+  .glt{grid-template-columns:1fr;height:auto;}
+  .gm{height:280px;border-radius:18px 18px 0 0;}
+  .gc{grid-template-rows:240px 240px;}
+  .gci:nth-child(1){border-radius:0;}
+  .gci:nth-child(2){border-radius:0 0 18px 18px;}
+  .gr4{grid-template-columns:1fr 1fr;}
+  .hbadges{flex-wrap:wrap;}
+}
+@media(max-width:560px){
+  .eg,.ejg{grid-template-columns:1fr;}
+  .gr4{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<nav>
+  <a class="nl" href="#top" aria-label="Inicio Alianza Libre por Guerrero">
+    <div class="nlogo"><img src="Imagenes%20Alianza/WhatsApp%20Image%202026-04-28%20at%205.45.25%20PM.jpeg" alt="Logo Alianza Libre por Guerrero — jaguar"/></div>
+    <div class="nt">
+      <span>Alianza Libre</span>
+      <strong>por <em>Guerrero</em></strong>
+    </div>
+  </a>
+  <ul>
+    <li><a onclick="document.getElementById('s-inst').scrollIntoView({behavior:'smooth'})">Nosotros</a></li>
+    <li><a onclick="document.getElementById('s-est').scrollIntoView({behavior:'smooth'})">Estructura</a></li>
+    <li><a onclick="document.getElementById('s-ejes').scrollIntoView({behavior:'smooth'})">Ejes</a></li>
+    <li><a onclick="document.getElementById('s-gal').scrollIntoView({behavior:'smooth'})">En acción</a></li>
+    <li><a onclick="document.getElementById('s-ali').scrollIntoView({behavior:'smooth'})">Aliadas</a></li>
+  </ul>
+  <button class="ncta" onclick="document.getElementById('s-une').scrollIntoView({behavior:'smooth'})">Sumarse a la Alianza</button>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="hbg" viewBox="0 0 600 680" preserveAspectRatio="none" aria-hidden="true">
+    <line x1="0" y1="113" x2="600" y2="113" stroke="white" stroke-width=".5"/>
+    <line x1="0" y1="226" x2="600" y2="226" stroke="white" stroke-width=".5"/>
+    <line x1="0" y1="340" x2="600" y2="340" stroke="white" stroke-width=".5"/>
+    <line x1="0" y1="453" x2="600" y2="453" stroke="white" stroke-width=".5"/>
+    <line x1="0" y1="566" x2="600" y2="566" stroke="white" stroke-width=".5"/>
+    <line x1="120" y1="0" x2="120" y2="680" stroke="white" stroke-width=".5"/>
+    <line x1="240" y1="0" x2="240" y2="680" stroke="white" stroke-width=".5"/>
+    <line x1="360" y1="0" x2="360" y2="680" stroke="white" stroke-width=".5"/>
+    <line x1="480" y1="0" x2="480" y2="680" stroke="white" stroke-width=".5"/>
+  </svg>
+  <div class="hjag" aria-hidden="true"></div>
+
+  <div class="hl">
+    <div class="hew">
+      <span class="htag">Red juvenil · Guerrero</span>
+      <div class="hdiv"></div>
+      <span class="hsub2">Fundada 2026</span>
+    </div>
+    <h1>Más organizaciones.<br>Mayor impacto.<br><em>Un solo Guerrero.</em></h1>
+    <div class="lema">Por Guerrero, somos más.</div>
+    <p class="hsub">La plataforma que articula organizaciones civiles, colectivos y juventudes guerrerenses para ejecutar proyectos de transformación real en todo el estado.</p>
+    <div class="hbtns">
+      <button class="bp" onclick="document.getElementById('s-une').scrollIntoView({behavior:'smooth'})">
+        Sumar mi organización
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="bs" onclick="document.getElementById('s-inst').scrollIntoView({behavior:'smooth'})">Conocer la Alianza</button>
+    </div>
+    <div class="hbadges">
+      <div class="hbi"><div class="hbn">5<em>+</em></div><div class="hbl">Orgs. aliadas</div></div>
+      <div class="hbsep"></div>
+      <div class="hbi"><div class="hbn">17</div><div class="hbl">Principios rectores</div></div>
+      <div class="hbsep"></div>
+      <div class="hbi"><div class="hbn">6</div><div class="hbl">Ejes de acción</div></div>
+    </div>
+  </div>
+
+  <div class="hr">
+    <div class="hri">
+      <div class="hpi">
+        <img src="Imagenes%20Alianza/486636250_1083361180485602_1176291128837423327_n.jpg" alt="Bailarina folclórica guerrerense en jornada cultural de la Alianza"/>
+        <div class="hcap">Cultura guerrerense<span>Jornada folclórica · Chilpancingo</span></div>
+      </div>
+      <div class="hpi">
+        <img src="Imagenes%20Alianza/492226653_1102113098610410_4661646899162815838_n.jpg" alt="Brigada de reforestación con jóvenes voluntarios en la sierra"/>
+        <div class="hcap">Reforestación<span>Sierra de Guerrero</span></div>
+      </div>
+      <div class="hpi">
+        <img src="Imagenes%20Alianza/555781043_1235372648617787_6593010747130622844_n.jpg" alt="Voluntarios de la Alianza distribuyendo bebidas en una jornada comunitaria"/>
+        <div class="hcap">Brigada comunitaria<span>Apoyo directo</span></div>
+      </div>
+    </div>
+    <div class="hob">
+      <div class="hob-dot"></div>
+      <div class="hob-text">
+        <p>Transformando Guerrero desde adentro</p>
+        <span>Asociación civil · Apartidista · Independiente</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mq" aria-hidden="true">
+  <div class="mqi">
+    <span class="mqitem"><span class="mqd"></span>Pluralidad Social</span>
+    <span class="mqitem"><span class="mqd"></span>Liderazgo Colectivo</span>
+    <span class="mqitem"><span class="mqd"></span>Respeto Mutuo</span>
+    <span class="mqitem"><span class="mqd"></span>Promoción de la Paz</span>
+    <span class="mqitem"><span class="mqd"></span>Solidaridad</span>
+    <span class="mqitem"><span class="mqd"></span>Inclusión</span>
+    <span class="mqitem"><span class="mqd"></span>Labor Comunitaria</span>
+    <span class="mqitem"><span class="mqd"></span>Transparencia</span>
+    <span class="mqitem"><span class="mqd"></span>Compromiso Cívico</span>
+    <span class="mqitem"><span class="mqd"></span>Cooperación Civil</span>
+    <span class="mqitem"><span class="mqd"></span>Emprendimiento Local</span>
+    <span class="mqitem"><span class="mqd"></span>Ciencia y Tecnología</span>
+    <span class="mqitem"><span class="mqd"></span>Cultura Guerrerense</span>
+    <span class="mqitem"><span class="mqd"></span>Pluralidad Social</span>
+    <span class="mqitem"><span class="mqd"></span>Liderazgo Colectivo</span>
+    <span class="mqitem"><span class="mqd"></span>Respeto Mutuo</span>
+    <span class="mqitem"><span class="mqd"></span>Promoción de la Paz</span>
+    <span class="mqitem"><span class="mqd"></span>Solidaridad</span>
+    <span class="mqitem"><span class="mqd"></span>Inclusión</span>
+    <span class="mqitem"><span class="mqd"></span>Labor Comunitaria</span>
+    <span class="mqitem"><span class="mqd"></span>Transparencia</span>
+    <span class="mqitem"><span class="mqd"></span>Cooperación Civil</span>
+    <span class="mqitem"><span class="mqd"></span>Compromiso Cívico</span>
+  </div>
+</div>
+
+<section class="inst" id="s-inst">
+  <div class="container il">
+    <article>
+      <div class="sl" style="color:var(--td)">Naturaleza institucional</div>
+      <h2 class="sh" style="color:var(--dk)">Una asociación civil guerrerense con capacidad jurídica plena</h2>
+      <div class="ib">
+        <p>La <strong>Alianza Libre por Guerrero</strong> es una asociación civil activa cuyo objeto es generar actividades, programas y proyectos en favor del beneficio social guerrerense y el desarrollo integral de la juventud y la niñez del estado.</p>
+        <p>Su modelo de articulación la distingue: no opera en solitario, sino como plataforma que agrupa organizaciones no gubernamentales, asociaciones civiles y colectivos guerrerenses que comparten sus mismos principios, multiplicando el impacto de cada acción en el estado.</p>
+      </div>
+      <blockquote class="iq">
+        <p>La generación de Alianzas es y siempre será uno de los principales ejes rectores del proyecto, pues la Alianza no es la causa unipersonal de quien la dirige, sino de un acuerdo colectivo y de consensos entre todas y todos quienes participan.</p>
+        <footer>Reglamento Interno · Art. XVI — Cooperación Civil e Institucional</footer>
+      </blockquote>
+    </article>
+    <aside class="pg">
+      <div class="pc">
+        <div class="pi" style="background:var(--tl);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="var(--td)" stroke-width="1.5"/><path d="M6 9l2 2 4-4" stroke="var(--td)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><h4>Pluralidad e inclusión</h4><p>Mujeres, LGBTTTIQ+, personas con discapacidad, Pueblos Originarios y Afromexicanos de Guerrero participan en igualdad.</p></div>
+      </div>
+      <div class="pc">
+        <div class="pi" style="background:var(--pul);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l2 5h5l-4 3 1.5 5L9 12l-4.5 3L6 10 2 7h5z" stroke="var(--pu)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <div><h4>Liderazgo articulado</h4><p>Construimos unidad con agrupaciones e instituciones guerrerenses para el beneficio del estado.</p></div>
+      </div>
+      <div class="pc">
+        <div class="pi" style="background:var(--aml);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="3" width="12" height="12" rx="3" stroke="var(--am)" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="var(--am)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div><h4>Transparencia</h4><p>Honestidad y claridad en todas las gestiones internas y ante la sociedad guerrerense.</p></div>
+      </div>
+      <div class="pc">
+        <div class="pi" style="background:var(--grl);"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 3c0 0-5 3.5-5 7.5a5 5 0 0010 0C14 6.5 9 3 9 3z" stroke="var(--gr)" stroke-width="1.5"/></svg></div>
+        <div><h4>Compromiso con el territorio</h4><p>Labor comunitaria en localidades marginadas, con prioridad a comunidades indígenas y afromexicanas.</p></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="est" id="s-est">
+  <div class="container">
+    <div class="sl" style="color:var(--t)">Estructura orgánica</div>
+    <h2 class="sh">Cómo estamos organizados</h2>
+    <p class="ss">Estructura institucional sólida aprobada en Asamblea Solemne Constitutiva y plasmada en el Reglamento Interno.</p>
+    <div class="eg">
+      <article class="ec"><div class="ea" style="background:var(--t);"></div><div class="en">I</div><div class="ei" style="background:rgba(0,157,181,.15);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="var(--t)" stroke-width="1.5"/><path d="M10 7v3l2 2" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Asamblea General</h3><p>Máximo órgano de análisis, debate y toma de decisiones. Aprueba programas, proyectos y reformas reglamentarias.</p></article>
+      <article class="ec"><div class="ea" style="background:var(--pu);"></div><div class="en">II</div><div class="ei" style="background:rgba(94,57,148,.15);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l7 4v6l-7 4-7-4V7z" stroke="var(--pu)" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Comité Directivo</h3><p>Órgano ejecutivo y de representación. Gestiona el proyecto y coordina las acciones aprobadas. Electo por dos años.</p></article>
+      <article class="ec"><div class="ea" style="background:var(--am);"></div><div class="en">III</div><div class="ei" style="background:rgba(217,146,26,.15);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="4" width="12" height="12" rx="3" stroke="var(--am)" stroke-width="1.5"/><path d="M8 10h4M10 8v4" stroke="var(--am)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Comisiones de Trabajo</h3><p>Órganos especializados que diseñan, ejecutan y evalúan proyectos por eje temático. Rinden informe anual.</p></article>
+      <article class="ec"><div class="ea" style="background:var(--co);"></div><div class="en">IV</div><div class="ei" style="background:rgba(194,80,40,.15);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="3" stroke="var(--co)" stroke-width="1.5"/><circle cx="14" cy="7" r="3" stroke="var(--co)" stroke-width="1.5"/><path d="M3 17c0-3 2-4 4-4m4 0c2 0 4 1 4 4" stroke="var(--co)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Agrupaciones Vinculadas</h3><p>Asociaciones civiles y colectivos guerrerenses adheridos a los principios de la Alianza, con voz y voto plenos.</p></article>
+      <article class="ec"><div class="ea" style="background:var(--gr);"></div><div class="en">V</div><div class="ei" style="background:rgba(62,123,34,.15);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3" stroke="var(--gr)" stroke-width="1.5"/><path d="M5 17c0-3 2.2-5 5-5s5 2 5 5" stroke="var(--gr)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Colaboradores Individuales</h3><p>Jóvenes guerrerenses que participan directamente con plenos derechos y obligaciones, sin pertenecer a agrupación.</p></article>
+      <article class="ec"><div class="ea" style="background:#666;"></div><div class="en">VI</div><div class="ei" style="background:rgba(255,255,255,.06);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="6" width="14" height="11" rx="2" stroke="#999" stroke-width="1.5"/><path d="M7 6V5a3 3 0 016 0v1" stroke="#999" stroke-width="1.5"/></svg></div><h3>Reuniones de Trabajo</h3><p>Sesiones operativas para planificación y seguimiento. Abiertas a entes públicos, privados y sociedad civil.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="ejes" id="s-ejes">
+  <div class="container">
+    <div class="sl" style="color:var(--co)">Líneas de acción</div>
+    <h2 class="sh" style="color:var(--dk)">Los frentes que nos mueven en Guerrero</h2>
+    <p class="ss" style="color:var(--sf)">Cada eje tiene su Comisión de Trabajo especializada para diseñar, ejecutar y evaluar programas con impacto real en el estado.</p>
+    <div class="ejg">
+      <article class="ejc" style="background:var(--tl);border-color:#bfe6ec;"><span style="position:absolute;inset:auto -30px -30px auto;width:140px;height:140px;border-radius:50%;background:var(--t);opacity:.06;"></span><div class="ejt"><div class="ejci" style="background:var(--t);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12M4 6h12M4 14h8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="ejnl" style="color:var(--td);">01</span></div><h3 style="color:var(--td);">Educación y participación cívica</h3><p style="color:#3f6e78;">Foros, talleres y conferencias en todos los niveles educativos. Prioridad a zonas rurales y marginadas.</p><div class="ejf" style="border-top:1px solid rgba(0,157,181,.18);"><span class="ejb" style="background:var(--t);color:#fff;">Activo</span></div></article>
+      <article class="ejc" style="background:var(--grl);border-color:#bbd9a3;"><div class="ejt"><div class="ejci" style="background:var(--gr);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3c0 0-6 4-6 9a6 6 0 0012 0c0-5-6-9-6-9z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div><span class="ejnl" style="color:var(--gr);">02</span></div><h3 style="color:var(--gr);">Medio ambiente</h3><p style="color:#456831;">Reforestación, reciclaje y economía circular para preservar los ecosistemas y la biodiversidad guerrerense.</p><div class="ejf" style="border-top:1px solid rgba(62,123,34,.2);"><span class="ejb" style="background:var(--gr);color:#fff;">Activo</span></div></article>
+      <article class="ejc" style="background:var(--pul);border-color:#dccdf0;"><div class="ejt"><div class="ejci" style="background:var(--pu);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l7 4v6l-7 4-7-4V7z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div><span class="ejnl" style="color:var(--pu);">03</span></div><h3 style="color:var(--pu);">Seguridad y cohesión social</h3><p style="color:#634a82;">Prevención social y comunidades cohesionadas en municipios guerrerenses.</p><div class="ejf" style="border-top:1px solid rgba(94,57,148,.2);"><span class="ejb" style="background:var(--pu);color:#fff;">En construcción</span></div></article>
+      <article class="ejc" style="background:var(--aml);border-color:#eed6a3;"><div class="ejt"><div class="ejci" style="background:var(--am);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 15V8l5-5 5 5v7H12v-4H8v4H5z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div><span class="ejnl" style="color:var(--am);">04</span></div><h3 style="color:#7a5500;">Desarrollo económico local</h3><p style="color:#7a6420;">Emprendimiento y fortalecimiento de pequeñas empresas guerrerenses para generar desarrollo y empleo.</p><div class="ejf" style="border-top:1px solid rgba(217,146,26,.22);"><span class="ejb" style="background:var(--am);color:#fff;">En construcción</span></div></article>
+      <article class="ejc" style="background:var(--col);border-color:#edc4ad;"><div class="ejt"><div class="ejci" style="background:var(--co);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#fff" stroke-width="1.5"/><path d="M3 18c0-4 3-6 7-6s7 2 7 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="ejnl" style="color:var(--co);">05</span></div><h3 style="color:var(--co);">Salud y deporte</h3><p style="color:#7a3e22;">Brigadas de salud en comunidades marginadas y cultura deportiva desde infancias guerrerenses.</p><div class="ejf" style="border-top:1px solid rgba(194,80,40,.22);"><span class="ejb" style="background:var(--co);color:#fff;">En construcción</span></div></article>
+      <article class="ejc" style="background:var(--pa);border-color:#dfdbd1;"><div class="ejt"><div class="ejci" style="background:var(--dk);"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3l2 4h5l-4 3 1.5 5L10 13l-4.5 2L7 10 3 7h5z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg></div><span class="ejnl" style="color:#555;">06</span></div><h3 style="color:var(--dk);">Cultura, turismo y ciencia</h3><p style="color:var(--sf);">Rescate de la identidad guerrerense, impulso al turismo local y apoyo a la innovación científica.</p><div class="ejf" style="border-top:1px solid #d9d4c8;"><span class="ejb" style="background:var(--dk);color:#fff;">En construcción</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="gal" id="s-gal">
+  <div class="container">
+    <div class="sl" style="color:var(--pu)">En acción</div>
+    <h2 class="sh" style="color:var(--dk)">Así trabajamos en territorio guerrerense</h2>
+    <p class="ss" style="color:var(--sf)">Brigadas comunitarias, jornadas de reforestación y apoyo directo a las familias más vulnerables del estado.</p>
+    <div class="glt">
+      <figure class="gm">
+        <img src="Imagenes%20Alianza/555865359_1235372721951113_6015201939963344885_n.jpg" alt="Brigada de la Alianza distribuyendo cajas de apoyo a familias guerrerenses"/>
+        <figcaption class="gmc"><span>Brigada · Comunidad</span><h4>Apoyo directo a familias en situación vulnerable</h4></figcaption>
+      </figure>
+      <div class="gc">
+        <figure class="gci">
+          <img src="Imagenes%20Alianza/492226653_1102113098610410_4661646899162815838_n.jpg" alt="Voluntarios de la Alianza al término de una jornada de reforestación"/>
+          <figcaption class="glab">Reforestación · Sierra</figcaption>
+        </figure>
+        <figure class="gci">
+          <img src="Imagenes%20Alianza/503562995_1136580068497046_6438200256931810582_n.jpg" alt="Colecta y distribución de ropa en colonia popular"/>
+          <figcaption class="glab">Colecta de ropa</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="gr4">
+      <figure class="gri"><img src="Imagenes%20Alianza/555815436_1235372638617788_5887978684682758926_n.jpg" alt="Voluntaria registrando entregas durante una brigada"/><figcaption class="glab">Logística</figcaption></figure>
+      <figure class="gri"><img src="Imagenes%20Alianza/555638487_1235372655284453_3005042704896804243_n.jpg" alt="Joven entregando apoyo a una madre con su hija"/><figcaption class="glab">Apoyo familiar</figcaption></figure>
+      <figure class="gri"><img src="Imagenes%20Alianza/555630165_1235372591951126_4891342577370738142_n.jpg" alt="Voluntarios sirviendo bebida caliente durante jornada"/><figcaption class="glab">Distribución</figcaption></figure>
+      <figure class="gri"><img src="Imagenes%20Alianza/486636250_1083361180485602_1176291128837423327_n.jpg" alt="Bailarina con traje típico guerrerense durante jornada cultural"/><figcaption class="glab">Cultura guerrerense</figcaption></figure>
+    </div>
+    <div class="gcap">
+      <div class="gcap-dot"></div>
+      <p>Brigadas comunitarias · Reforestación · Cultura · Apoyo a familias vulnerables</p>
+    </div>
+  </div>
+</section>
+
+<section class="ali" id="s-ali">
+  <div class="container">
+    <div class="sl" style="color:var(--t)">La red guerrerense</div>
+    <h2 class="sh">Organizaciones que ya son parte</h2>
+    <div class="alil">
+      <div class="alileft">
+        <p>La Alianza opera porque nadie puede todo solo. Cada organización aliada trae su especialidad, su municipio y su comunidad, sumando fuerza al proyecto colectivo guerrerense.</p>
+        <p>Las Agrupaciones Vinculadas participan con voz, voto y derecho a integrar el Comité Directivo, en plena igualdad con los colaboradores individuales.</p>
+        <div class="alic">
+          <div class="alid"><div class="alidd"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Adherencia a los principios fundamentales de la Alianza</p></div>
+          <div class="alid"><div class="alidd"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Actividad comprobable en beneficio de comunidades guerrerenses</p></div>
+          <div class="alid"><div class="alidd"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Naturaleza apartidista e independiente</p></div>
+          <div class="alid"><div class="alidd"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Compromiso con los principios rectores del proyecto</p></div>
+        </div>
+      </div>
+      <div class="aligw">
+        <div class="aligt">Organizaciones actualmente vinculadas</div>
+        <div class="alicps">
+          <div class="alicp">Red Juvenil Guerrero</div>
+          <div class="alicp">Colectivo Ambiental GRO</div>
+          <div class="alicp">Impulso Ciudadano</div>
+          <div class="alicp">Brigada Educativa Sur</div>
+          <div class="alicp">Enlace Comunitario GRO</div>
+          <button class="alica" onclick="document.getElementById('s-une').scrollIntoView({behavior:'smooth'})">+ Sumar organización</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="imp" id="s-imp">
+  <div class="container impin">
+    <div>
+      <div class="sl" style="color:rgba(255,255,255,.55)">Nuestro alcance en Guerrero</div>
+      <h2 class="imph serif">Lo que hemos construido juntos</h2>
+      <p class="impp">Desde Chilpancingo hacia los municipios del estado. Cada brigada, cada árbol plantado, cada familia apoyada demuestra que la juventud guerrerense organizada sí transforma.</p>
+      <button class="bwh" onclick="document.getElementById('s-une').scrollIntoView({behavior:'smooth'})">
+        Sumar mi organización
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="impst">
+      <div class="impsc"><div class="impsn">5+</div><div class="impsl">Organizaciones en la red guerrerense</div></div>
+      <div class="impsc"><div class="impsn">17</div><div class="impsl">Principios rectores que nos unen</div></div>
+      <div class="impsc"><div class="impsn">6</div><div class="impsl">Ejes temáticos de trabajo</div></div>
+      <div class="impsc"><div class="impsn">2026</div><div class="impsl">Año de fundación en Guerrero</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fnd" id="s-fnd">
+  <div class="container">
+    <div class="sl" style="color:var(--am)">Equipo fundador</div>
+    <h2 class="sh" style="color:var(--dk)">Quienes lo hacen posible</h2>
+    <p class="ss" style="color:var(--sf)">Jóvenes guerrerenses con compromiso, trayectoria y visión de largo plazo.</p>
+    <div class="fndg">
+      <article class="fndc"><div class="fndav" style="background:var(--pu)">EA</div><h4>Emiliano Araujo</h4><p>Relaciones institucionales</p><span class="fndt" style="background:var(--pul);color:var(--pu);">Orador internacional</span></article>
+      <article class="fndc" style="border:1.5px dashed #d8d4c8;background:transparent;"><div class="fndav" style="background:#ececec;color:#bbb;">+</div><h4 style="color:#bbb;">Próximo fundador/a</h4><p style="color:#ccc;">Tu organización aquí</p><span class="fndt" style="background:#f0ece2;color:#aaa;">¿Te unes?</span></article>
+      <article class="fndc" style="border:1.5px dashed #d8d4c8;background:transparent;"><div class="fndav" style="background:#ececec;color:#bbb;">+</div><h4 style="color:#bbb;">Próximo fundador/a</h4><p style="color:#ccc;">Tu organización aquí</p><span class="fndt" style="background:#f0ece2;color:#aaa;">¿Te unes?</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="une" id="s-une">
+  <div class="container unel">
+    <div>
+      <div class="sl" style="color:var(--t)">Sumarse</div>
+      <h2 class="sh">Tu organización puede ser parte de algo más grande en Guerrero</h2>
+      <p class="unep">La Alianza está abierta a organizaciones civiles, colectivos y juventudes guerrerenses comprometidas que compartan sus principios y quieran multiplicar su impacto en el estado.</p>
+      <div class="bens">
+        <div class="ben"><div class="beni"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Voz y voto en la Asamblea General — incidencia real en las decisiones</p></div>
+        <div class="ben"><div class="beni"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Red estatal de organizaciones y aliados guerrerenses</p></div>
+        <div class="ben"><div class="beni"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Posibilidad de presidir Comisiones de Trabajo especializadas</p></div>
+        <div class="ben"><div class="beni"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Plataforma de visibilidad e incidencia en todo el estado</p></div>
+        <div class="ben"><div class="beni"><svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M2 5l2 2 4-4" stroke="var(--t)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><p>Cooperación con entes públicos y privados del estado de Guerrero</p></div>
+      </div>
+    </div>
+    <form class="fc" onsubmit="event.preventDefault();this.querySelector('.bsub').textContent='Solicitud enviada';">
+      <h3>Solicitud de vinculación</h3>
+      <p class="fcd">Un integrante del Comité Directivo se pondrá en contacto contigo.</p>
+      <div class="fr">
+        <input type="text" placeholder="Nombre / Organización" required/>
+        <input type="email" placeholder="Correo electrónico" required/>
+      </div>
+      <div class="fr">
+        <input type="text" placeholder="Municipio"/>
+        <input type="text" placeholder="Región de Guerrero"/>
+      </div>
+      <div style="margin-bottom:14px;">
+        <select style="width:100%;padding:13px 15px;border:1px solid #2e3338;border-radius:9px;font-size:14px;background:#0f1316;color:#aab0b6;">
+          <option value="">Tipo de vinculación</option>
+          <option>Organización civil / colectivo</option>
+          <option>Colaborador/a individual</option>
+          <option>Aliado institucional</option>
+          <option>Voluntario/a</option>
+        </select>
+      </div>
+      <textarea placeholder="Describe tu organización y por qué quieres sumarte a la Alianza Libre por Guerrero..."></textarea>
+      <button type="submit" class="bsub">Enviar solicitud de vinculación</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ftop">
+      <div>
+        <div class="flr">
+          <div class="flb"><img src="Imagenes%20Alianza/WhatsApp%20Image%202026-04-28%20at%205.45.25%20PM.jpeg" alt="Logo Alianza Libre por Guerrero"/></div>
+          <p class="fbn">Alianza Libre <em>por Guerrero</em></p>
+        </div>
+        <p class="flem">Por Guerrero, somos más.</p>
+        <small>Asociación civil activa. Proyecto independiente y apartidista de articulación social juvenil guerrerense. Chilpancingo, Guerrero · 2026.</small>
+      </div>
+      <div class="fc2"><h5>La Alianza</h5><ul><li>Naturaleza y objeto</li><li>Principios fundamentales</li><li>Estructura orgánica</li><li>Ejes de acción</li></ul></div>
+      <div class="fc2"><h5>Red</h5><ul><li>Organizaciones aliadas</li><li>Colaboradores</li><li>En acción</li><li>Sumarse</li></ul></div>
+      <div class="fc2"><h5>Contacto</h5><ul><li>Instagram</li><li>TikTok</li><li>Facebook</li><li>WhatsApp</li></ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Alianza Libre por Guerrero · Reglamento Interno aprobado en Asamblea Solemne Constitutiva · Proyecto independiente</p>
+      <div class="sr">
+        <button class="sb" aria-label="Instagram">IG</button>
+        <button class="sb" aria-label="TikTok">TK</button>
+        <button class="sb" aria-label="Facebook">FB</button>
+        <button class="sb" aria-label="WhatsApp">WA</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
